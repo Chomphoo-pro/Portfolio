@@ -1,0 +1,35 @@
+@import 'config.scss';
+@import 'getFont.scss';
+
+.color{
+    color: $primary;
+}
+
+.size{
+    font-size: 64px;
+}
+
+
+.container_links{
+    font-family: 'PlayfairDisplay';
+    margin: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+/*
+211 × 256
+
+@media (min-width: 1000px) {
+    .articles { grid-template-columns: repeat(2, 1fr); }
+  }
+  
+@media (min-width: 1600px) {
+    .articles { grid-template-columns: repeat(3, 1fr); }
+}*/

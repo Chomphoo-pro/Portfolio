@@ -1,0 +1,19 @@
+@import 'getFont.scss'; 
+
+html, body{
+    font-family: 'Roboto';
+}
+
+
+#nav ul li::first-letter{
+    font-family: 'Roboto-Black';
+}
+
+main{
+    font-size: medium;
+}
+
+.title{
+    font-family: 'PlayfairDisplay';
+    font-weight: normal;
+}

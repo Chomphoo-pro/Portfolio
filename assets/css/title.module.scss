@@ -1,0 +1,22 @@
+@import 'config.scss'; 
+@import 'getFont.scss'; 
+
+.title{
+    min-width: max-content;
+    font-size: 48px;
+    color: $primary;
+    font-family: 'PlayfairDisplay';
+    font-weight: normal;
+}
+
+@media (min-width: 1000px) {
+    .title{
+        font-size: 64px;
+    }
+  }
+  
+  @media (min-width: 1600px) {
+    .title{
+        font-size: 96px;
+    }
+  }

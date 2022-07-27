@@ -1,0 +1,9 @@
+@import 'config.scss'; 
+@import 'getFont.scss'; 
+
+.introduction{
+    overflow-wrap: break-word;
+    font-family: 'Noto Sans';
+    font-size: 22px;
+    color: $white;
+}

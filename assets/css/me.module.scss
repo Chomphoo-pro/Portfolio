@@ -1,0 +1,32 @@
+@import 'config.scss';
+@import 'getFont.scss';
+
+.color{
+    color: $primary;
+}
+
+.size{
+    font-size: 64px;
+}
+
+
+.container_links{
+    font-family: 'PlayfairDisplay';
+    margin: 2em;
+    h1{
+        font-size: 64px;
+    }
+    h2 {
+        font-size: 40px;
+    }
+    span {
+        font-family: 'Roboto';
+        font-size: 32px;
+    }
+}
+
+
+.container {
+    display: flex;
+    flex-direction: row;
+}

@@ -1,0 +1,13 @@
+@import 'config.scss'; 
+
+.container{
+    height: 25px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 25px;
+    color: $dark;
+    background: white;
+    font-family: 'PlayfairDisplay';
+}

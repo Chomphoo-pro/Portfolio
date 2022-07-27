@@ -1,0 +1,46 @@
+/*
+html { font-size: 22px; }
+body { padding: 1rem; }
+*/
+@import 'config.scss';
+
+
+.articles {
+  padding-bottom: 10vh;
+  //width: 100%;
+  margin: 0 auto;
+  display: grid;
+  gap: 4vw;
+}
+
+
+.article {
+  border: solid $primary-light 5px;
+  box-sizing: border-box;
+  height: 100%;
+  line-height: 5vh;
+  //aspect-ratio: 0.8 / 1;
+  color: white;
+  padding: 2rem;
+  //height: 4rem;
+  border-radius: 0.5rem;
+  h3{
+    font-family: 'PlayfairDisplay';
+    font-size: 32px;
+    font-weight: normal;
+  }
+/*
+  .autor{
+
+  }*/
+}
+
+
+
+@media (min-width: 1000px) {
+  .articles { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1600px) {
+  .articles { grid-template-columns: repeat(3, 1fr); }
+}

@@ -1,0 +1,146 @@
+@import 'config.scss';
+
+* {
+    margin: unset;
+    margin-block: 0;
+    margin-inline: 0;
+    padding-inline: 0;
+}
+
+html,
+body,
+#__next {
+    height: 100vh;
+}
+
+body {
+    color: #BFBFBF;
+}
+
+a {
+    text-decoration: unset;
+}
+
+
+
+
+main {
+    min-width: min-content;
+    //line-height: 10vh;
+    padding-top: 10em;
+    padding-left: 20vw;
+    padding-right: 20vw;
+
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+        //font-size: 7vh;
+        font-weight: normal;
+        margin-bottom: 5vh;
+    }
+
+    p {
+        font-size: 20px;
+    }
+
+    /*
+    a{
+        //font-size: 4vh;
+    }*/
+}
+
+#dark main a {
+    color: $white;
+
+}
+
+#light main a {
+    color: $primary-dark;
+
+}
+
+
+
+
+
+menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 2em;
+
+    svg {
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+}
+
+
+
+.hide {
+    position: absolute;
+    visibility: hidden;
+}
+
+.hideSB {
+    overflow: hidden;
+}
+
+
+
+
+/*
+@media only screen and (min-width: 600px) {
+    nav, nav[data-ismenu="true"] {
+        menu{
+            svg{
+                visibility: hidden;
+                position: absolute;
+            }
+        }
+
+        ul{
+            position: inherit;
+            visibility: visible;
+        }
+    }
+    
+}*/
+
+
+#light{
+    transition: background-color 0.3s, color 1.5s;
+    color: $primary-dark;
+    background-color: white;
+
+    nav ul li a{
+      transition: color 1.5s;
+      color: white;
+    }
+    nav{
+      top{
+        background-color: $primary-dark;
+      }
+
+      ul{
+        justify-content: center;
+        background-color: $primary-dark;
+      }
+
+      
+    }
+  }
+
+
+
+
+  #dark{
+    transition: background-color 0.3s, color 1.5s;
+    color: $white;
+    background-color: $dark;
+
+
+}
