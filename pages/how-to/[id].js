@@ -5,11 +5,10 @@ import { motion } from "framer-motion";
 import E404 from '../404';
 import Nav from '../../components/Nav';
 import strapi from '../api/strapi'
-import { serialize } from 'next-mdx-remote/serialize';
-import { MDXRemote } from 'next-mdx-remote';
 import Title from '../../components/Articles-Title';
 import Introduction from '../../components/Articles-Introduction';
 import styleIntro from '../../assets/css/center.module.scss';
+import parse from 'html-react-parser';
 
 
 let easing = [0.6, -0.05, 0.01, 0.99];
@@ -105,6 +104,11 @@ export default function Product({ data }) {
   }
 
 
+  const title = parse(data[0]?.title);
+  const introduction = parse(data[0]?.introduction);
+  const summary = parse(data[0]?.summary);
+  const content = parse(data[0]?.content);
+
 
   return (
     <>
@@ -122,10 +126,10 @@ export default function Product({ data }) {
       <main>
         <div className={styleIntro.center}>
           <motion.div {...fadeIn}>
-            <MDXRemote {...data[0].title} components={{ Title }} />
+            <Title>{title}</Title>
           </motion.div>
           <motion.div {...fadeIn2}>
-            <MDXRemote {...data[0].introduction} components={{ Introduction }} />
+            <Introduction>{introduction}</Introduction>
           </motion.div>
         </div>
 
@@ -136,9 +140,8 @@ export default function Product({ data }) {
           whileInView="onscreen"
         >
           <motion.div className="card" variants={cardVariants}>
-
-            <MDXRemote {...data[0].summary} />
-            <MDXRemote {...data[0].content} />
+            {summary}
+            {content}
           </motion.div>
         </motion.div>
       </main>
@@ -152,11 +155,12 @@ export async function getServerSideProps(props) {
   var params = props.params
   const datas = await strapi(process.env.DB_HOST+`/api/articles?populate=details&filters[slug]=${params.id}`)
 
+
   //Text MD to HTML
-  const title = await serialize("<Title>" + datas.data[0].attributes?.title + "</Title>");
-  const introduction = await serialize("<Introduction>" + datas.data[0].attributes?.details.introduction + "</Introduction>");
-  const summary = await serialize(datas.data[0].attributes?.details.summary);
-  const content = await serialize(datas.data[0].attributes?.details.content);
+  const title = await datas.data[0].attributes?.title;
+  const introduction = await datas.data[0].attributes?.details.introduction;
+  const summary = await datas.data[0].attributes?.details.summary;
+  const content = await datas.data[0].attributes?.details.content;
 
 
   return {

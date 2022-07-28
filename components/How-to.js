@@ -1,7 +1,7 @@
-import Image from 'next/image'
+//import Image from 'next/image'
 import React from "react";
-import ReactDOM from 'react-dom';
 import Link from 'next/link';
+import parse from 'html-react-parser';
 
 /*
 export default function Articles({ id, title, autor, image, date }) {
@@ -28,10 +28,15 @@ export default function Articles({ id, title, autor, image, date }) {
 
 
 class Article extends React.Component {
-    __atr = "";
+
     constructor(props) {
         super(props)
-        this.__atr=props.attributes
+        
+        this.slug = parse(props.attributes.slug);
+        this.title = parse(props.attributes.title);
+        this.item = Object.entries(props.attributes.item).forEach(([key, value]) => {
+            parse(value+"");
+        });
     }
 
 
@@ -39,17 +44,17 @@ class Article extends React.Component {
     render() {
    
         return (
-            <Link href={"how-to/"+this.__atr.slug} passHref={true}><a>
-                <div id={this.__atr.slug} className="article" >
-                    <h3>{this.__atr.title}</h3>
-                    {this.__atr?.category && (
-                        <h3>{this.__atr.category}</h3>
+            <Link href={"how-to/"+this?.slug} passHref={true}><a>
+                <div id={this?.slug} className="article" >
+                    <h3>{this?.title}</h3>
+                    {this.item?.category && (
+                        <h3>{this.item.category}</h3>
                     )}
                     {/* 
-                    <span className="autor">{this.__atr.autor}</span>
+                    <span className="autor">{this.item?.autor}</span>
 
                     <Image
-                        src={this.__atr.image}
+                        src={this.item?.image}
                         alt="Picture of the author"
                         width={500}
                         height={500}
