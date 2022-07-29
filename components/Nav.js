@@ -25,7 +25,7 @@ function Nav() {
 
 
 
-      <ul className='navLeft'>
+      <ul>
         <li ><Link href="/veille" passHref={true}><a>veille</a></Link></li>
         <li ><Link href="/how-to" passHref={true}><a>how to</a></Link></li>
       </ul>

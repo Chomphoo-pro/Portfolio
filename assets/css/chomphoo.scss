@@ -1,18 +1,20 @@
 @import 'config.scss';
 
-* {
-    margin: unset;
-    margin-block: 0;
-    margin-inline: 0;
-    padding-inline: 0;
+html{
+    padding: 1.5em;
 }
 
+* {
+    margin: unset;
+    margin-inline: 0;
+}
+/*
 html,
 body,
 #__next {
     height: 100vh;
 }
-
+*/
 body {
     color: #BFBFBF;
 }
@@ -25,11 +27,11 @@ a {
 
 
 main {
+    min-height: 60vh;
     min-width: min-content;
     //line-height: 10vh;
-    padding-top: 10em;
-    padding-left: 20vw;
-    padding-right: 20vw;
+    padding-top: 5em;
+    
 
     display: flex;
     flex-flow: column;
@@ -92,23 +94,22 @@ menu {
 
 
 
-/*
-@media only screen and (min-width: 600px) {
-    nav, nav[data-ismenu="true"] {
-        menu{
-            svg{
-                visibility: hidden;
-                position: absolute;
-            }
-        }
 
-        ul{
-            position: inherit;
-            visibility: visible;
-        }
+@media (min-width: 1000px) {
+    main {
+        padding-left: 15vw;
+        padding-right: 15vw;
     }
     
-}*/
+}
+
+@media (min-width: 1600px) {
+    main {
+        padding-left: 25vw;
+        padding-right: 25vw;
+    }
+    
+}
 
 
 #light{

@@ -5,28 +5,38 @@
     color: $primary;
 }
 
-.size{
-    font-size: 64px;
+.container{
+    flex-wrap: wrap;
+    flex-direction: unset;
 }
 
-
 .container_links{
-    font-family: 'PlayfairDisplay';
     margin: 2em;
+    font-family: 'PlayfairDisplay';
     h1{
-        font-size: 64px;
+        padding-top: 0.5em;
+        font-size: 48px;
     }
     h2 {
-        font-size: 40px;
+        font-size: 32px;
     }
     span {
         font-family: 'Roboto';
-        font-size: 32px;
+        font-size: 20px;
     }
 }
-
-
-.container {
-    display: flex;
-    flex-direction: row;
-}
+/*
+@media (min-width: 1000px) {
+    .container_links{
+        h1{
+            font-size: 64px;
+        }
+        
+        h2 {
+            font-size: 40px;
+        }
+        span {
+            font-size: 32px;
+        }
+    }
+  }*/
