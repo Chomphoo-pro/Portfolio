@@ -7,26 +7,22 @@ import strapi from './api/strapi'
 
 function PageHowTo({data}) {
 
-
   return (
-
     <>
       <Head>
         <title>Chomphoo LE BEUX</title>
-        <meta name="description" content="Site WEB de Chomphoo LE BEUX" />
+        <meta name="Chomphoo LE BEUX" content="Site WEB de Chomphoo LE BEUX" />
         <link rel="icon" href="/logo.png" />
       </Head>
 
       <Nav />
 
       <main>
-        <h2>Veille</h2>
+        <h2 className="center">Veille</h2>
         <div className="articles">
-
           {data.map((d) => (<Veille key={d.id} {...d} />))}
         </div>
       </main>
-
     </>
 
   )

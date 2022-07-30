@@ -11,28 +11,32 @@
 
 
 .container_links{
-    font-family: 'PlayfairDisplay';
     display: flex;
+    
     margin: 2em;
     flex-direction: column;
     align-items: end;
+    font-family: 'PlayfairDisplay';
 }
 
 .container {
     display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 80vh;
     flex-wrap: wrap;
     flex-direction: row;
 }
 
 
 /*211 × 256*/
-
+/*
 @media (min-width: 1000px) {
     .size{
         font-size: 64px;
     }
     
-  }
+  }*/
   /*
 @media (min-width: 1600px) {
     .articles { grid-template-columns: repeat(3, 1fr); }

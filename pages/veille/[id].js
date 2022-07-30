@@ -1,5 +1,3 @@
-
-
 import Head from 'next/head';
 import { motion } from "framer-motion";
 import E404 from '../404';
@@ -7,7 +5,7 @@ import Nav from '../../components/Nav';
 import strapi from '../api/strapi'
 import Title from '../../components/Articles-Title';
 import Introduction from '../../components/Articles-Introduction';
-import styleIntro from '../../assets/css/center.module.scss';
+import Summary from '../../components/Articles-Summary';
 import parse from 'html-react-parser';
 
 
@@ -94,10 +92,7 @@ const cardVariants = {
 };
 
 
-
-
-export default function Product({ data }) {
-
+export default function PageVeilleID({ data }) {
   if (data.length == 0) {
     return <E404 />
   }
@@ -105,7 +100,7 @@ export default function Product({ data }) {
 
   const title = parse(data[0]?.title);
   const introduction = parse(data[0]?.introduction);
-  const summary = parse(data[0]?.summary);
+  const summary = data[0]?.summary;
   const content = parse(data[0]?.content);
 
 
@@ -113,40 +108,42 @@ export default function Product({ data }) {
     <>
       <Head>
         <title>Chomphoo LE BEUX</title>
-        <meta name="description" content="Site WEB de Chomphoo LE BEUX" />
+        <meta name="Chomphoo LE BEUX" content="Site WEB de Chomphoo LE BEUX" />
         <link rel="icon" href="/logo.png" />
       </Head>
 
-      <motion.div {...transitionValues} >
 
+      <motion.div {...transitionValues} >
         <Nav />
       </motion.div>
 
+
       <main>
-        <div className={styleIntro.center}>
+        <div className="blockCenter W-min-content center">
           <motion.div {...fadeIn}>
             <Title>{title}</Title>
           </motion.div>
           <motion.div {...fadeIn2}>
-            <Introduction>{introduction}</Introduction>
+            <Introduction >{introduction}</Introduction>
           </motion.div>
         </div>
 
 
-        <motion.div
-          className="card-container"
-          initial="offscreen"
-          whileInView="onscreen"
-        >
-          <motion.div className="card" variants={cardVariants}>
-            {summary}
+        <motion.div initial="offscreen" whileInView="onscreen">
+          <motion.div className="center pageJump" variants={cardVariants}>
+            <Summary {...summary} />
+          </motion.div>
+        </motion.div>
+
+
+        <motion.div initial="offscreen" whileInView="onscreen">
+          <motion.div className="pageJump" variants={cardVariants}>
             {content}
           </motion.div>
         </motion.div>
       </main>
     </>
   );
-
 }
 
 

@@ -34,7 +34,7 @@ export default function Home() {
     <>
       <Head>
         <title>Chomphoo LE BEUX</title>
-        <meta name="description" content="Site WEB de Chomphoo LE BEUX" />
+        <meta name="Chomphoo LE BEUX" content="Site WEB de Chomphoo LE BEUX" />
         <link rel="icon" href="/logo.png" />
       </Head>
 
