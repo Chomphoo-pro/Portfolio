@@ -95,9 +95,7 @@ const cardVariants = {
 };
 
 
-
-
-export default function PageHowToID({ data }) {
+export default function PageVeilleID({ data }) {
   if (data.length == 0) {
     return <E404 />
   }
@@ -124,7 +122,7 @@ export default function PageHowToID({ data }) {
 
 
       <main>
-        <div className="W-min-content center">
+        <div className="blockCenter W-min-content center">
           <motion.div {...fadeIn}>
             <Title>{title}</Title>
           </motion.div>
@@ -135,7 +133,7 @@ export default function PageHowToID({ data }) {
 
 
         <motion.div initial="offscreen" whileInView="onscreen">
-          <motion.div className="center" variants={cardVariants}>
+          <motion.div className="center pageJump" variants={cardVariants}>
             <Summary {...summary} />
           </motion.div>
         </motion.div>
